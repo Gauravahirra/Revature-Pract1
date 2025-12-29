@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body style="font-family:Arial;background:#f2f2f2;">
+
+<div style="width:350px;margin:80px auto;background:#fff;padding:20px;border-radius:6px;">
+<h2>Login</h2>
+
+<input style="width:100%;padding:8px;margin:6px 0;" type="email" id="email" placeholder="Email">
+<input style="width:100%;padding:8px;margin:6px 0;" type="password" id="password" placeholder="Password">
+
+<button style="width:100%;padding:10px;background:#28a745;color:#fff;border:none;cursor:pointer;"
+onclick="login()">Login</button>
+</div>
+
+<script>
+function login() {
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    if (user && email.value === user.email && password.value === user.password) {
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid Email or Password");
+    }
+}
+</script>
+
+</body>
+</html>
